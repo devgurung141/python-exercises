@@ -33,14 +33,27 @@ product_offer = (item_more_than_2_items or premimum_member)and offer_not_expire
 # ---------------------------------------
 username = 'codeup'
 password = 'notastrongpassword'
+
 # the password must be at least 5 characters
 len(password) >= 5
+# solution:
+check1 = len(password) >= 5
 
 # the username must be no more than 20 characters
 len(username) <= 20
+#solution
+check2 = len(username) <= 20
+
 
 # the password must not be the same as the username
 username != password
+#solution
+check3 = username != password
+
 
 # neither the username or password can start or end with whitespace
 not((username or password).startswith(' ')) or ((username or password).endswith(' '))
+#solution
+no_whitespace_username = not(username.startswith(' ') or username[-1] == ' ')
+no_whitespace_password = not(password.startswith(' ') or password[-1] == ' ')
+user_and_pass_valid = no_whitespace_password and no_whitespace_username
